@@ -5,15 +5,13 @@ import Options from '../Options/Options';
 import Notification from '../Notification/Notification';
 
 const App = () => {
-  const [feedback, setFeedback] = useState({ good: 0, neutral: 0, bad: 0 });
-
-  // При першому завантаженні сторінки беремо дані з localStorage
-  useEffect(() => {
+  // Завантаження стану з localStorage
+  const [feedback, setFeedback] = useState(() => {
     const storedFeedback = localStorage.getItem('feedback');
-    if (storedFeedback) {
-      setFeedback(JSON.parse(storedFeedback));
-    }
-  }, []);
+    return storedFeedback
+      ? JSON.parse(storedFeedback)
+      : { good: 0, neutral: 0, bad: 0 };
+  });
 
   // Оновлюємо localStorage при зміні стану
   useEffect(() => {
