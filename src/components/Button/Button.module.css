@@ -1,0 +1,18 @@
+.button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin: 5px;
+}
+
+.button:nth-child(1) {
+  background-color: #4caf50; /* зелений для Good */
+}
+.button:nth-child(2) {
+  background-color: #ffc107; /* жовтий для Neutral */
+}
+.button:nth-child(3) {
+  background-color: #f44336; /* червоний для Bad */
+}
