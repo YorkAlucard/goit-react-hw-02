@@ -1,12 +1,12 @@
 import Button from '../Button/Button';
 
-const Options = ({ estim, total, reset }) => {
+const Options = ({ updateFeedback, resetFeedback, totalFeedback }) => {
   return (
     <div>
-      <Button estim={() => estim('good')}>Good</Button>
-      <Button estim={() => estim('neutral')}>Neutral</Button>
-      <Button estim={() => estim('bad')}>Bad</Button>
-      {total > 0 && <Button estim={reset}>Reset</Button>}
+      <Button estim={() => updateFeedback('good')}>Good</Button>
+      <Button estim={() => updateFeedback('neutral')}>Neutral</Button>
+      <Button estim={() => updateFeedback('bad')}>Bad</Button>
+      {totalFeedback > 0 && <Button estim={resetFeedback}>Reset</Button>}
     </div>
   );
 };
